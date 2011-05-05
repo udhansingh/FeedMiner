@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<mappings>
+	<mapping tag="ROOT" 			mapto="jobslist"		enabled="true" 	is_cdata="false" />
+	<mapping tag="ENTRY" 			mapto="job" 			enabled="true" 	is_cdata="false" />
+	<mapping tag="TITLE" 			mapto="title" 			enabled="true" 	is_cdata="false" />
+	<mapping tag="PUBLISHER" 		mapto="publisher" 		enabled="true" 	is_cdata="false" />
+	<mapping tag="PUBLISHER_URL" 	mapto="publisherurl" 	enabled="true" 	is_cdata="false" />
+	<mapping tag="DATE" 			mapto="postDate" 		enabled="true" 	is_cdata="false" />
+	
+	<mapping tag="GEO" 				mapto="location" 		enabled="false" is_cdata="false">
+		<child type="GEO" tag="location" 	link="country" 		findBy="city"		enabled="true" 	is_cdata="false"/>
+		<child type="GEO" tag="state" 		link="state" 		findBy="city"		enabled="true" 	is_cdata="false"/>
+		<child type="GEO" tag="country" 	link="country" 		findBy="city"		enabled="true" 	is_cdata="false"/>
+	</mapping>
+	
+	<mapping tag="DESCRIPTION" 		mapto="description" 	enabled="true" 	is_cdata="true" />
+	<mapping tag="URL"				mapto="link" 			enabled="true" 	is_cdata="true" />
+	<mapping tag="UUID"				mapto="guid" 			enabled="true" 	is_cdata="false" />
+	<mapping tag="LOCALE"			mapto="locale"			value="en"	enabled="true"	is_cdata="false" />
+</mappings>

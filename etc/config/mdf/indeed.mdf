@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<mappings>
+	<mapping tag="ROOT" 			mapto="source"			enabled="true" 	is_cdata="false" />
+	<mapping tag="ENTRY" 			mapto="job" 			enabled="true" 	is_cdata="false" />
+	<mapping tag="TITLE" 			mapto="title" 			enabled="true" 	is_cdata="true" />
+	<mapping tag="PUBLISHER" 		mapto="publisher" 		enabled="true" 	is_cdata="false" />
+	<mapping tag="PUBLISHER_URL" 	mapto="publisherurl" 	enabled="true" 	is_cdata="false" />
+	<mapping tag="DATE" 			mapto="date" 			enabled="true" 	is_cdata="true" />
+	<mapping tag="GEO" 				mapto="country" 		enabled="true" 	is_cdata="true" link="city"	findBy="city"/>
+	<mapping tag="DESCRIPTION" 		mapto="description" 	enabled="true" 	is_cdata="true" />
+	<mapping tag="URL"				mapto="url" 			enabled="true" 	is_cdata="true" />
+	<mapping tag="UUID"				mapto="referencenumber" enabled="true" 	is_cdata="true" />
+</mappings>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+	IMPORTANT
+	Any HTML special characters in URL or name must be escaped 
+	example: ampersand is written as &amp;
+	
+	For more information refer to
+	http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+-->
+<feeders>
+	<feeder name="semiconductor" url="http://expertiz.in/semiconductor.feed?view=postings&amp;type=rss" />
+	<feeder name="technology" url="http://expertiz.in/technology.feed?view=postings&amp;type=rss" />
+	<feeder name="media-marketing-and-sales" url="http://expertiz.in/media-marketing-and-sales.feed?view=postings&amp;type=rss" />
+</feeders>

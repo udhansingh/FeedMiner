@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<mappings>
+	<mapping tag="UUID"				scrape="false" 		source="auto"/>
+	<mapping tag="TITLE" 			scrape="false" 		source="feed"/>
+	<mapping tag="URL"				scrape="false" 		source="feed"/>
+	<mapping tag="PUBLISHER" 		scrape="false" 		source="config-file"/>
+	<mapping tag="PUBLISHER_URL" 	scrape="false" 		source="config-file"/>
+	
+	<mapping tag="ROOT" 			content="source"			scrape="false" 		source="system"/>
+	<mapping tag="ENTRY" 			content="job" 				scrape="false" 		source="system"/>
+	
+	<mapping tag="GEO" 				content="Location" 			scrape="true" 		source="user"/>
+	<mapping tag="DATE" 			content="Posted On:" 		scrape="true" 		source="user"/>
+	<mapping tag="DESCRIPTION" 		content="Job Description:" 	scrape="true" 		source="user"/>
+</mappings>

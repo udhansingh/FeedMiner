@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<mappers>
+	<mapper name="www.indeed.com"		input="indeed.mdf"		output="indeed.xml"			enabled="true"/>
+	<mapper name="www.simplyhired.com"	input="simplyhired.mdf"	output="simplyhired.xml"	enabled="true"/>
+	<mapper name="www.recruit.net"		input="recruit.mdf"		output="recruit.xml"		enabled="true"/>
+</mappers>

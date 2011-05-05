@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<geo>
+	<loc country="India" state="Tamil Nadu" city="Chennai"/>
+	<loc country="India" state="Tamil Nadu" city="Madurai"/>
+	
+	<loc country="India" state="Maharastra" city="Mumbai"/>
+	<loc country="India" state="Maharastra" city="Pune"/>
+	
+	<loc country="India" state="Karnataka" city="Bangalore"/>
+	<loc country="India" state="Karnataka" city="Bengaluru"/>
+	
+	<loc country="India" state="Andhra Pradesh" city="Hyderabad"/>
+
+	<loc country="India" state="Haryana" city="Gurgaon"/>
+
+	<loc country="India" state="Kerala" city="Cochin"/>
+
+	<loc country="India" state="Uttar Pradesh" city="Noida"/>
+
+	<loc country="India" state="Delhi" city="New Delhi"/>
+	
+	<loc country="China" state="Guangdong" city="Shenzhen"/>
+	<loc country="China" state="Shanghai" city="Shanghai"/>
+	
+	<loc country="Belgium" state="East Flanders" city="Sint-Niklaas (Belgium)"/>
+	<loc country="Belgium" state="East Flanders" city="Gent (Belgium)"/>
+	
+	<loc country="USA" state="New Jersey" city="Hopewell, NJ"/>
+	
+	<loc country="Multiple" state="Multiple" city="Multiple"/>
+</geo>

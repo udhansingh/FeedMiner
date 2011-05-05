@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<project default="create-zip" basedir=".">
+	<property name="project.name" value="FeedMiner" />
+    <property name="src.dir" location="src"/>
+    <property name="lib.dir" location="lib"/>
+    <property name="classes.dir" location="build"/>
+    <property name="data.dir" location="data"/>
+	<property name="config.dir" location="config"/>
+	<property name="dist.dir" location="dist"/>
+	<property name="release.dir" location="${dist.dir}/${project.name}"/>
+
+	<property name="Product-Name" value="${project.name}" />
+	<property name="Implementation-Title" value="${project.name} - Extract Transfrom and Load RSS Feeds" />
+	<property name="Implementation-Version" value="1.0.0" />
+	<property name="Implementation-Vendor" value="udaya kumar" />
+	<property name="Main-Class" value="org.onesun.feedminer.app.FeedMinerApp" />
+	
+	<fileset dir="${lib.dir}" id="dep.jar.files">
+	      <include name="**/*.jar"/>
+    </fileset>
+	
+	<pathconvert property="Class-Path" pathsep=" " refid="dep.jar.files" targetos="unix">
+			<map from="${basedir}/" to=''/>
+	</pathconvert>
+	
+    <path id="runtime.classpath">
+        <pathelement location="${classes.dir}"/>
+        <pathelement location="${res.dir}"/>
+        <pathelement location="${src.dir}"/>
+        <pathelement location=""/>
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+    <echo message="${src.dir}"/>
+    <!-- - - - - - - - - - - - - - - - - -
+    target: compile
+    - - - - - - - - - - - - - - - - - -->
+    <target name="compile-all">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}">
+            <classpath refid="runtime.classpath"/>
+        </javac>
+    </target>
+    
+	<!-- - - - - - - - - - - - - - - - - -
+    target: jar
+    - - - - - - - - - - - - - - - - - -->
+    <target name="create-jar" depends="clean-all,compile-all">
+    	<mkdir dir="${release.dir}" />
+    		
+    	<jar destfile="${release.dir}/${project.name}.jar" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Product-Name" value="${Product-Name}"/>
+				<attribute name="Implementation-Vendor" value="${Implementation-Vendor}"/>
+				<attribute name="Implementation-Title" value="${Implementation-Title}"/>
+				<attribute name="Implementation-Version" value="${Implementation-Version}"/>
+				<attribute name="Main-Class" value="${Main-Class}"/>
+				
+				<attribute name="Class-Path" value="${Class-Path}" />
+			</manifest>
+		</jar>
+
+    </target>
+
+	<!-- - - - - - - - - - - - - - - - - -
+    target: release
+    - - - - - - - - - - - - - - - - - -->
+    <target name="create-dist" depends="create-jar">
+		<copy todir="${release.dir}/lib">
+			<fileset dir="${lib.dir}" />
+		</copy>
+		
+		<copy todir="${release.dir}/config">
+    		<fileset dir="${config.dir}" />
+  		</copy>
+
+		<copy todir="${release.dir}/data">
+			<fileset dir="${data.dir}" />
+		</copy>
+		
+		<mkdir dir="${release.dir}/logs"/>
+		
+		<delete dir="${classes.dir}" />
+    </target>
+    
+	<target name="create-zip" depends="create-dist">
+        <delete file="${dist.dir}/${project.name}.zip"/>
+		
+        <zip destfile="${dist.dir}/${project.name}.zip">
+        	<zipfileset dir="${release.dir}"/>
+        </zip>
+		
+		<delete dir="${release.dir}" />
+    </target>
+    <!-- - - - - - - - - - - - - - - - - -
+    target: clean
+    - - - - - - - - - - - - - - - - - -->
+    <target name="clean-all">
+    	<delete dir="${release.dir}" />
+        <delete dir="${classes.dir}" />
+    </target>  
+</project>
